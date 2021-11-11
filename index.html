@@ -44,6 +44,21 @@
         </div>
     </div>
     <div id="div3" style="display:none"> 
+        <h1>Tamanhos:</h1>
+        <div class="form-group">
+            <input type="text" id="sizetxt" required="required"/>
+            <label for="input" class="control-label">Tamanho texto</label><i class="bar"></i>
+        </div>
+        <div class="form-group">
+            <input type="text" id="sizede" required="required"/>
+            <label for="input" class="control-label">Tamanho preço de</label><i class="bar"></i>
+        </div>
+        <div class="form-group">
+            <input type="text" id="sizepor" required="required"/>
+            <label for="input" class="control-label">Tamanho preço por</label><i class="bar"></i>
+        </div>
+    </div>
+    <div id="div4" style="display:none"> 
         <h1>Nomes dos Produtos:</h1>
         <div class="form-group prod1">
             <input type="text" id="nomeprod1" required="required"/>
@@ -58,7 +73,7 @@
             <label for="input" class="control-label">Produto 3</label><i class="bar"></i>
         </div>
     </div>
-    <div id="div4" style="display:none"> 
+    <div id="div5" style="display:none"> 
         <h1>Preço de (R$):</h1>
         <div class="form-group prod1">
             <input type="text" id="deprod1" required="required"/>
@@ -73,7 +88,7 @@
             <label for="input" class="control-label">Produto 3</label><i class="bar"></i>
         </div>
     </div>
-    <div id="div5" style="display:none"> 
+    <div id="div6" style="display:none"> 
         <h1>Preço por (R$):</h1>
         <div class="form-group prod1">
             <input type="text" id="porprod1" required="required"/>
@@ -88,7 +103,7 @@
             <label for="input" class="control-label" >Produto 3</label><i class="bar"></i>
         </div>
     </div>
-    <div id="div6" style="display:none"> 
+    <div id="div7" style="display:none"> 
         <h1>Width produtos:</h1>
         <div class="form-group prod1">
             <input type="text" id="wprod1" required="required"/>
@@ -103,7 +118,7 @@
             <label for="input" class="control-label" >Produto 3</label><i class="bar"></i>
         </div>
     </div>
-    <div id="div7" style="display:none"> 
+    <div id="div8" style="display:none"> 
         <h1>Link das Bordas:</h1>
         <div class="form-group prod1">
             <input type="text" id="borda1" required="required"/>
@@ -122,7 +137,7 @@
             <label for="input" class="control-label">Borda 4</label><i class="bar"></i>
         </div>
     </div>
-    <div id="div8" style="display:none"> 
+    <div id="div9" style="display:none"> 
         <h1>Width das Bordas:</h1>
         <div class="form-group prod1">
             <input type="text" id="wborda1" required="required"/>
@@ -141,8 +156,8 @@
             <label for="input" class="control-label">Borda 4</label><i class="bar"></i>
         </div>
     </div>
-    <div id="div9" style="display:none"> 
-        <h1>Height:</h1>
+    <div id="div10" style="display:none"> 
+        <h1>Width das Bordas:</h1>
         <div class="form-group prod1">
             <input type="text" id="height" required="required"/>
             <label for="input" class="control-label">Height</label><i class="bar"></i>
@@ -183,11 +198,12 @@
     </form>
 </section>
     <div class="button-container" style="display:flex;">
-      <button type="button" class="button" onclick="next()" id="prox"><span>Próximo</span></button>
-      <button type="button" class="button" onclick="fazerVitrine()" id="prox"><span>Preview</span></button>
+        <button type="button" style="margin-bottom: 0;" class="button" onclick="back()" id="back"><span>Anterior</span></button>
+      <button type="button" style="margin-bottom: 0;" class="button" onclick="next()" id="prox"><span>Próximo</span></button>
     </div>
-    <div class="button-container">
+    <div class="button-container" >
         
+        <button type="button" style="margin-top: 10px;" class="button" onclick="fazerVitrine()" id="prox"><span>Preview</span></button>
       </div>
   </div>
   <div class="container cont2">
@@ -198,24 +214,50 @@
 </div>
   <script>
     var j = 1;
+    var back1 ="";
+    var prox ="";
     function next(){
-      var teste = "div" +j;
-      console.log(teste);
-      var div = document.getElementById("div"+j);
-      div.style.display = "none";
-    //   var div2 = document.getElementById("checklist");
-    //   div2.innerText =document.getElementById("bg").getAttribute("name")+": "+document.getElementById("bg").value;
-      if (j<8){
-        j++;
+        back1.disabled ="false";
+        //   var div2 = document.getElementById("checklist");
+        //   div2.innerText =document.getElementById("bg").getAttribute("name")+": "+document.getElementById("bg").value;
+        if (j<10){
+            var teste = "div" +j;
+            console.log(teste);
+            var div = document.getElementById("div"+j);
+            div.style.display = "none";
+            j++;
         div = document.getElementById("div"+j);
         div.style.display = "block";
       }     
       else{
-        j++;
+        // j++;
+        // div = document.getElementById("div"+j);
+        // div.style.display = "block";
+        // prox = document.getElementById("prox");
+        prox.disabled = "true";
+      }           
+      
+    }
+    function back(){
+        prox.disabled ="false";
+      
+    //   var div2 = document.getElementById("checklist");
+    //   div2.innerText =document.getElementById("bg").getAttribute("name")+": "+document.getElementById("bg").value;
+      if (j>1){
+        var teste = "div" +j;
+      console.log(teste);
+      var div = document.getElementById("div"+j);
+      div.style.display = "none";
+        j--;
         div = document.getElementById("div"+j);
         div.style.display = "block";
-        var prox = document.getElementById("prox");
-        prox.disabled = "true";
+      }     
+      else{
+        // j--;
+        // div = document.getElementById("div"+j);
+        // div.style.display = "block";
+        // back1 = document.getElementById("back");
+        back1.disabled = "true";
       }           
       
     }
@@ -274,13 +316,13 @@
         vitrine += '\n'+'<tr>';
         vitrine += '\n'+'<td>';
         vitrine += '\n'+'<div width="'+document.getElementById("wprod1").value+'" style="text-align:center;">';
-        vitrine += '\n'+'<span style="font-size:10px;color:'+document.getElementById("txtcolor").value+';font-family: '+"'Montserrat'"+',sans-serif;font-weight:700;">'+document.getElementById("nomeprod1").value+'</span>';
+        vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizetxt").value+'px;color:'+document.getElementById("txtcolor").value+';font-family: '+"'Montserrat'"+',sans-serif;font-weight:700;">'+document.getElementById("nomeprod1").value+'</span>';
         vitrine += '\n'+'</div>';
         vitrine += '\n'+'<div style="height: 8px">';
         vitrine += '\n'+'</div>';
         if(document.getElementById("deprod1").value != ""){
           vitrine += '\n'+'<div width="'+document.getElementById("wprod1").value+'" style="text-align:center">';
-          vitrine += '\n'+'<span style="font-size:13px;color:black;line-height:1;font-family: '+"'Montserrat'"+',sans-serif;font-weight:300;text-decoration: line-through;text-decoration-color: black;">';
+          vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizede").value+'px;color:black;line-height:1;font-family: '+"'Montserrat'"+',sans-serif;font-weight:300;text-decoration: line-through;text-decoration-color: black;">';
           vitrine += '\n'+'De R$'+document.getElementById("deprod1").value;
           vitrine += '\n'+'</span>';
           vitrine += '\n'+'</div>';            
@@ -291,18 +333,18 @@
         vitrine += '\n'+'<td align="center" valign="top" width="'+document.getElementById("wprod1").value+'" style="padding: 0;">';
         vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod1").value+'" align="center" style="margin: 0; padding: 0;">';
         vitrine += '\n'+'<tr>';
-        vitrine += '\n'+'<td width="'+document.getElementById("wprod1").value/3+'">';
+        vitrine += '\n'+'<td width="'+document.getElementById("wprod1").value/2.5+'">';
         vitrine += '\n'+'</td>';
         vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
-        vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: 9px;text-align: left;color: #000000; margin:0 0 0 0;font-weight: 700;padding:0;">POR<br>R$';
+        vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value/2.4+'px;text-align: left;color: #000000; margin:0 0 0 0;font-weight: 700;padding:0;">POR<br>R$';
         vitrine += '\n'+'</p>';
         vitrine += '\n'+'</td>';
         vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
-        vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: 22px;text-align: left; color: #000000; margin:0;padding:0;font-weight: 700;">&nbsp;';
+        vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value+'px;text-align: left; color: #000000; margin:0;padding:0;font-weight: 700;">&nbsp;';
         vitrine += document.getElementById("porprod1").value;;
         vitrine += '\n'+'</p>';
         vitrine += '\n'+'</td> ';
-        vitrine += '\n'+'<td width="'+document.getElementById("wprod1").value/3+'">';
+        vitrine += '\n'+'<td width="'+document.getElementById("wprod1").value/2.5+'">';
         vitrine += '\n'+'</td>';
         vitrine += '\n'+'</tr>';
         vitrine += '\n'+'</table>';
@@ -319,13 +361,13 @@
             vitrine += '\n'+'<tr>';
             vitrine += '\n'+'<td>';
             vitrine += '\n'+'<div width="'+document.getElementById("wprod2").value+'" style="text-align:center;">';
-            vitrine += '\n'+'<span style="font-size:10px;color:'+document.getElementById("txtcolor").value+';font-family: '+"'Montserrat'"+',sans-serif;font-weight:700;">'+document.getElementById("nomeprod2").value+'</span>';
+            vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizetxt").value+'px;color:'+document.getElementById("txtcolor").value+';font-family: '+"'Montserrat'"+',sans-serif;font-weight:700;">'+document.getElementById("nomeprod2").value+'</span>';
             vitrine += '\n'+'</div>';
             vitrine += '\n'+'<div style="height: 8px">';
             vitrine += '\n'+'</div>';
             if(document.getElementById("deprod2").value != ""){
               vitrine += '\n'+'<div width="'+document.getElementById("wprod2").value+'" style="text-align:center">';
-              vitrine += '\n'+'<span style="font-size:13px;color:black;line-height:1;font-family: '+"'Montserrat'"+',sans-serif;font-weight:300;text-decoration: line-through;text-decoration-color: black;">';
+              vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizede").value+'px;color:black;line-height:1;font-family: '+"'Montserrat'"+',sans-serif;font-weight:300;text-decoration: line-through;text-decoration-color: black;">';
               vitrine += '\n'+'De R$'+document.getElementById("deprod2").value;
               vitrine += '\n'+'</span>';
               vitrine += '\n'+'</div>';              
@@ -336,18 +378,18 @@
             vitrine += '\n'+'<td align="center" valign="top" width="'+document.getElementById("wprod2").value+'" style="padding: 0;">';
             vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod2").value+'" align="center" style="margin: 0; padding: 0;">';
             vitrine += '\n'+'<tr>';
-            vitrine += '\n'+'<td width="'+document.getElementById("wprod2").value/3+'">';
+            vitrine += '\n'+'<td width="'+document.getElementById("wprod2").value/2.5+'">';
             vitrine += '\n'+'</td>';
             vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
-            vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: 9px;text-align: left;color: #000000; margin:0 0 0 0;font-weight: 700;padding:0;">POR<br>R$';
+            vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value/2.4+'px;text-align: left;color: #000000; margin:0 0 0 0;font-weight: 700;padding:0;">POR<br>R$';
             vitrine += '\n'+'</p>';
             vitrine += '\n'+'</td>';
             vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
-            vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: 22px;text-align: left; color: #000000; margin:0;padding:0;font-weight: 700;">&nbsp;';
+            vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value+'px;text-align: left; color: #000000; margin:0;padding:0;font-weight: 700;">&nbsp;';
             vitrine += document.getElementById("porprod2").value;;
             vitrine += '\n'+'</p>';
             vitrine += '\n'+'</td> ';
-            vitrine += '\n'+'<td width="'+document.getElementById("wprod2").value/3+'">';
+            vitrine += '\n'+'<td width="'+document.getElementById("wprod2").value/2.5+'">';
             vitrine += '\n'+'</td>';
             vitrine += '\n'+'</tr>';
             vitrine += '\n'+'</table>';
@@ -364,13 +406,13 @@
               vitrine += '\n'+'<tr>';
               vitrine += '\n'+'<td>';
               vitrine += '\n'+'<div width="'+document.getElementById("wprod3").value+'" style="text-align:center;">';
-              vitrine += '\n'+'<span style="font-size:10px;color:'+document.getElementById("txtcolor").value+';font-family: '+"'Montserrat'"+',sans-serif;font-weight:700;">'+document.getElementById("nomeprod3").value+'</span>';
+              vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizetxt").value+'px;color:'+document.getElementById("txtcolor").value+';font-family: '+"'Montserrat'"+',sans-serif;font-weight:700;">'+document.getElementById("nomeprod3").value+'</span>';
               vitrine += '\n'+'</div>';
               vitrine += '\n'+'<div style="height: 8px">';
               vitrine += '\n'+'</div>';
               if(document.getElementById("deprod3").value != ""){
                 vitrine += '\n'+'<div width="'+document.getElementById("wprod3").value+'" style="text-align:center">';
-                vitrine += '\n'+'<span style="font-size:13px;color:black;line-height:1;font-family: '+"'Montserrat'"+',sans-serif;font-weight:300;text-decoration: line-through;text-decoration-color: black;">';
+                vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizede").value+'px;color:black;line-height:1;font-family: '+"'Montserrat'"+',sans-serif;font-weight:300;text-decoration: line-through;text-decoration-color: black;">';
                 vitrine += '\n'+'De R$'+document.getElementById("deprod3").value;
                 vitrine += '\n'+'</span>';
                 vitrine += '\n'+'</div>';              
@@ -381,18 +423,18 @@
               vitrine += '\n'+'<td align="center" valign="top" width="160" style="padding: 0;">';
               vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod3").value+'" align="center" style="margin: 0; padding: 0;">';
               vitrine += '\n'+'<tr>';
-              vitrine += '\n'+'<td width="'+document.getElementById("wprod3").value/3+'">';
+              vitrine += '\n'+'<td width="'+document.getElementById("wprod3").value/2.5+'">';
               vitrine += '\n'+'</td>';
               vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
-              vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: 9px;text-align: left;color: #000000; margin:0 0 0 0;font-weight: 700;padding:0;">POR<br>R$';
+              vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value/2.4+'px;text-align: left;color: #000000; margin:0 0 0 0;font-weight: 700;padding:0;">POR<br>R$';
               vitrine += '\n'+'</p>';
               vitrine += '\n'+'</td>';
               vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
-              vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: 22px;text-align: left; color: #000000; margin:0;padding:0;font-weight: 700;">&nbsp;';
+              vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value+'px;text-align: left; color: #000000; margin:0;padding:0;font-weight: 700;">&nbsp;';
               vitrine += document.getElementById("porprod3").value;;
               vitrine += '\n'+'</p>';
               vitrine += '\n'+'</td> ';
-              vitrine += '\n'+'<td width="'+document.getElementById("wprod3").value/3+'">';
+              vitrine += '\n'+'<td width="'+document.getElementById("wprod3").value/2.5+'">';
               vitrine += '\n'+'</td>';
               vitrine += '\n'+'</tr>';
               vitrine += '\n'+'</table>';
