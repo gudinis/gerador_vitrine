@@ -311,9 +311,9 @@
         vitrine += '\n'+'</table>';
         vitrine += '\n'+'</td>';
         vitrine += '\n'+'<td align="left" valign="top">';
+        vitrine += '\n'+'<img src="'+document.getElementById("borda2").value+'" alt="TEXTO DA IMAGEM" width="'+document.getElementById("wborda2").value+'" height="'+document.getElementById("height").value+'" style="display: block; padding: 0px; text-align: center; height: 100%; width: '+document.getElementById("wborda2").value+'px; border: 0px;">';
+        vitrine += '\n'+'</td>';
           if(selectedValue == 'doisprod'||selectedValue =='tresprod'){
-            vitrine += '\n'+'<img src="'+document.getElementById("borda2").value+'" alt="TEXTO DA IMAGEM" width="'+document.getElementById("wborda2").value+'" height="'+document.getElementById("height").value+'" style="display: block; padding: 0px; text-align: center; height: 100%; width: '+document.getElementById("wborda2").value+'px; border: 0px;">';
-            vitrine += '\n'+'</td>';
             vitrine += '\n'+'<td align="center" style="line-height:1" valign="MIDDLE" width="'+document.getElementById("wprod2").value+'">';
             vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod2").value+'" align="center" style="margin: 0; padding: 0;">';
             vitrine += '\n'+'<tr>';
@@ -400,11 +400,11 @@
               vitrine += '\n'+'</tr>';
               vitrine += '\n'+'</table>';
               vitrine += '\n'+'</td>';
+              vitrine += '\n'+'<td align="right" valign="top">';
+              vitrine += '\n'+'<img src="'+document.getElementById("borda4").value+'" alt="TEXTO DA IMAGEM" width="'+document.getElementById("wborda4").value+'" height="'+document.getElementById("height").value+'" style="display: block; padding: 0px; text-align: center; height: 100%; width: '+document.getElementById("wborda4").value+'px; border: 0px;">';
+              vitrine += '\n'+'</td>';
             }
           }                    
-        vitrine += '\n'+'<td align="right" valign="top">';
-        vitrine += '\n'+'<img src="'+document.getElementById("borda4").value+'" alt="TEXTO DA IMAGEM" width="'+document.getElementById("wborda4").value+'" height="'+document.getElementById("height").value+'" style="display: block; padding: 0px; text-align: center; height: 100%; width: '+document.getElementById("wborda4").value+'px; border: 0px;">';
-        vitrine += '\n'+'</td>';
         vitrine += '\n'+'</tr>';
         vitrine += '\n'+'</table>';
         // div2.innerText = (vitrine);
