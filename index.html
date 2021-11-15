@@ -1,395 +1,454 @@
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./style2.css" />
-    <title>CSS Grid e Flexbox</title>
-  </head>
-  <!-- <div align="center" style="margin-left: 5rem;"> 
-    <h1 align="left" style="text-align: center;margin: 0 0 0.5em;width:600px">Modelo:</h1>
-    <img src="/img1.png" width="600">
-  </div> -->
-  <div class="flex">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./style2.css" />
+  <title>CSS Grid e Flexbox</title>
+</head>
+<!-- <div align="center" style="margin-left: 5rem;"> 
+  <h1 align="left" style="text-align: center;margin: 0 0 0.5em;width:600px">Modelo:</h1>
+  <img src="/img1.png" width="600">
+</div> -->
+<div class="flex">
 <div class="container">
-    <section>
-    <form>
-    <div id="div1">
-        <h1>Produtos:</h1>
-        <div class="form-group" id="div1">
-            <select name="prod" id="prod" onchange="getSelectValue();">
-                <option value="umprod" selected="selected">1 Produto</option>
-                <option value="doisprod">2 Produtos</option>
-                <option value="tresprod">3 Produtos</option>
-            </select>
-            <label for="select" class="control-label">Selecione a quantidade de Produtos</label><i class="bar"></i>
-        </div>
+  <section>
+  <form>
+  <div id="div1">
+      <h1>Produtos:</h1>
+      <div class="form-group" id="div1">
+          <select name="prod" id="prod" onchange="getSelectValue();">
+              <option value="umprod" selected="selected">1 Produto</option>
+              <option value="doisprod">2 Produtos</option>
+              <option value="tresprod">3 Produtos</option>
+          </select>
+          <label for="select" class="control-label">Selecione a quantidade de Produtos</label><i class="bar"></i>
       </div>
-      <div id="div2" style="display:none"> 
-        <h1>Cores (HEX):</h1>
-        <div class="form-group">
-            <input type="text" id="bg" required="required"/>
-            <label for="input" class="control-label">Bg Color</label><i class="bar"></i>
-        </div>
-        <div class="form-group">
-            <input type="text" id="txtcolor" required="required"/>
-            <label for="input" class="control-label">Cor do Texto</label><i class="bar"></i>
-        </div>
-        <div class="form-group">
-            <input type="text" id="colorpd" required="required"/>
-            <label for="input" class="control-label">Cor Preço de</label><i class="bar"></i>
-        </div>
-        <div class="form-group">
-            <input type="text" id="colorpp" required="required"/>
-            <label for="input" class="control-label">Cor Preço por</label><i class="bar"></i>
-        </div>
     </div>
-    <div id="div3" style="display:none"> 
-        <h1>Tamanhos:</h1>
-        <div class="form-group">
-            <input type="text" id="sizetxt" required="required"/>
-            <label for="input" class="control-label">Tamanho texto</label><i class="bar"></i>
-        </div>
-        <div class="form-group">
-            <input type="text" id="sizede" required="required"/>
-            <label for="input" class="control-label">Tamanho preço de</label><i class="bar"></i>
-        </div>
-        <div class="form-group">
-            <input type="text" id="sizepor" required="required"/>
-            <label for="input" class="control-label">Tamanho preço por</label><i class="bar"></i>
-        </div>
-    </div>
-    <div id="div4" style="display:none"> 
-        <h1>Nomes dos Produtos:</h1>
-        <div class="form-group prod1">
-            <input type="text" id="nomeprod1" required="required"/>
-            <label for="input" class="control-label">Produto 1</label><i class="bar"></i>
-        </div>
-        <div class="form-group prod2">
-            <input type="text" id="nomeprod2" required="required"/>
-            <label for="input" class="control-label">Produto 2</label><i class="bar"></i>
-        </div>
-        <div class="form-group prod3">
-            <input type="text" id="nomeprod3" required="required"/>
-            <label for="input" class="control-label">Produto 3</label><i class="bar"></i>
-        </div>
-    </div>
-    <div id="div5" style="display:none"> 
-        <h1>Preço de (R$):</h1>
-        <div class="form-group prod1">
-            <input type="text" id="deprod1" required="required"/>
-            <label for="input" class="control-label">Produto 1</label><i class="bar"></i>
-        </div>
-        <div class="form-group prod2">
-            <input type="text" id="deprod2" required="required"/>
-            <label for="input" class="control-label">Produto 2</label><i class="bar"></i>
-        </div>
-        <div class="form-group prod3">
-            <input type="text" id="deprod3" required="required"/>
-            <label for="input" class="control-label">Produto 3</label><i class="bar"></i>
-        </div>
-    </div>
-    <div id="div6" style="display:none"> 
-        <h1>Preço por (R$):</h1>
-        <div class="form-group prod1">
-            <input type="text" id="porprod1" required="required"/>
-            <label for="input" class="control-label">Produto 1</label><i class="bar"></i>
-        </div>
-        <div class="form-group prod2">
-            <input type="text" id="porprod2" required="required"/>
-            <label for="input" class="control-label">Produto 2</label><i class="bar"></i>
-        </div>
-        <div class="form-group prod3">
-            <input type="text" id="porprod3" required="required"/>
-            <label for="input" class="control-label" >Produto 3</label><i class="bar"></i>
-        </div>
-    </div>
-    <div id="div7" style="display:none"> 
-        <h1>Width produtos:</h1>
-        <div class="form-group prod1">
-            <input type="text" id="wprod1" required="required"/>
-            <label for="input" class="control-label" >Produto 1</label><i class="bar"></i>
-        </div>
-        <div class="form-group prod2">
-            <input type="text" id="wprod2" required="required"/>
-            <label for="input" class="control-label" >Produto 2</label><i class="bar"></i>
-        </div>
-        <div class="form-group prod3">
-            <input type="text" id="wprod3" required="required"/>
-            <label for="input" class="control-label" >Produto 3</label><i class="bar"></i>
-        </div>
-    </div>
-    <div id="div8" style="display:none"> 
-        <h1>Link das Bordas:</h1>
-        <div class="form-group prod1">
-            <input type="text" id="borda1" required="required"/>
-            <label for="input" class="control-label">Borda 1</label><i class="bar"></i>
-        </div>
-        <div class="form-group prod1">
-            <input type="text" id="borda2" required="required"/>
-            <label for="input" class="control-label">Borda 2</label><i class="bar"></i>
-        </div>
-        <div class="form-group prod2">
-            <input type="text" id="borda3" required="required"/>
-            <label for="input" class="control-label">Borda 3</label><i class="bar"></i>
-        </div>
-        <div class="form-group prod3">
-            <input type="text" id="borda4" required="required"/>
-            <label for="input" class="control-label">Borda 4</label><i class="bar"></i>
-        </div>
-    </div>
-    <div id="div9" style="display:none"> 
-        <h1>Width das Bordas:</h1>
-        <div class="form-group prod1">
-            <input type="text" id="wborda1" required="required"/>
-            <label for="input" class="control-label">Borda 1</label><i class="bar"></i>
-        </div>
-        <div class="form-group prod1">
-            <input type="text" id="wborda2" required="required"/>
-            <label for="input" class="control-label">Borda 2</label><i class="bar"></i>
-        </div>
-        <div class="form-group prod2">
-            <input type="text" id="wborda3" required="required"/>
-            <label for="input" class="control-label">Borda 3</label><i class="bar"></i>
-        </div>
-        <div class="form-group prod3">
-            <input type="text" id="wborda4" required="required"/>
-            <label for="input" class="control-label">Borda 4</label><i class="bar"></i>
-        </div>
-    </div>
-    <div id="div10" style="display:none"> 
-        <h1>Width das Bordas:</h1>
-        <div class="form-group prod1">
-            <input type="text" id="height" required="required"/>
-            <label for="input" class="control-label">Height</label><i class="bar"></i>
-        </div>
-    </div>
-      <!-- 
+    <div id="div2" style="display:none"> 
+      <h1>Cores (HEX):</h1>
       <div class="form-group">
-        <textarea required="required"></textarea>
-        <label for="textarea" class="control-label">Textarea</label><i class="bar"></i>
+          <input type="text" id="bg" required="required"/>
+          <label for="input" class="control-label">Bg Color</label><i class="bar"></i>
       </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" checked="checked"/><i class="helper"></i>I'm the label from a checkbox
-        </label>
+      <div class="form-group">
+          <input type="text" id="txtcolor" required="required"/>
+          <label for="input" class="control-label">Cor do Texto</label><i class="bar"></i>
       </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"/><i class="helper"></i>I'm the label from a checkbox
-        </label>
+      <div class="form-group">
+          <input type="text" id="colorpd" required="required"/>
+          <label for="input" class="control-label">Cor Preço de</label><i class="bar"></i>
       </div>
-      <div class="form-radio">
-        <div class="radio">
-          <label>
-            <input type="radio" name="radio" checked="checked"/><i class="helper"></i>I'm the label from a radio button
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="radio"/><i class="helper"></i>I'm the label from a radio button
-          </label>
-        </div>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"/><i class="helper"></i>I'm the label from a checkbox
-        </label>
-      </div> -->
-    </form>
-</section>
-    <div class="button-container" style="display:flex;">
-        <button type="button" style="margin-bottom: 0;" class="button" onclick="back()" id="back"><span>Anterior</span></button>
-      <button type="button" style="margin-bottom: 0;" class="button" onclick="next()" id="prox"><span>Próximo</span></button>
-    </div>
-    <div class="button-container" >
-        
-        <button type="button" style="margin-top: 10px;" class="button" onclick="fazerVitrine()" id="prox"><span>Preview</span></button>
+      <div class="form-group">
+          <input type="text" id="colorpp" required="required"/>
+          <label for="input" class="control-label">Cor Preço por</label><i class="bar"></i>
       </div>
   </div>
-  <div class="container cont2">
-    <h1>Preview:</h1>
-    <div id="testehtml">
+  <div id="div3" style="display:none"> 
+      <h1>Tamanhos:</h1>
+      <div class="form-group">
+          <input type="text" id="sizetxt" required="required"/>
+          <label for="input" class="control-label">Tamanho texto</label><i class="bar"></i>
+      </div>
+      <div class="form-group">
+          <input type="text" id="sizede" required="required"/>
+          <label for="input" class="control-label">Tamanho preço de</label><i class="bar"></i>
+      </div>
+      <div class="form-group">
+          <input type="text" id="sizepor" required="required"/>
+          <label for="input" class="control-label">Tamanho preço por</label><i class="bar"></i>
+      </div>
+  </div>
+  <div id="div4" style="display:none"> 
+      <h1>Nomes dos Produtos:</h1>
+      <div class="form-group prod1">
+          <input type="text" id="nomeprod1" required="required"/>
+          <label for="input" class="control-label">Produto 1</label><i class="bar"></i>
+      </div>
+      <div class="form-group prod2">
+          <input type="text" id="nomeprod2" required="required"/>
+          <label for="input" class="control-label">Produto 2</label><i class="bar"></i>
+      </div>
+      <div class="form-group prod3">
+          <input type="text" id="nomeprod3" required="required"/>
+          <label for="input" class="control-label">Produto 3</label><i class="bar"></i>
+      </div>
+  </div>
+  <div id="div5" style="display:none"> 
+      <h1>Preço de (R$):</h1>
+      <div class="form-group prod1">
+          <input type="text" id="deprod1" required="required"/>
+          <label for="input" class="control-label">Produto 1</label><i class="bar"></i>
+      </div>
+      <div class="form-group prod2">
+          <input type="text" id="deprod2" required="required"/>
+          <label for="input" class="control-label">Produto 2</label><i class="bar"></i>
+      </div>
+      <div class="form-group prod3">
+          <input type="text" id="deprod3" required="required"/>
+          <label for="input" class="control-label">Produto 3</label><i class="bar"></i>
+      </div>
+  </div>
+  <div id="div6" style="display:none"> 
+      <h1>Preço por (R$):</h1>
+      <div class="form-group prod1">
+          <input type="text" id="porprod1" required="required"/>
+          <label for="input" class="control-label">Produto 1</label><i class="bar"></i>
+      </div>
+      <div class="form-group prod2">
+          <input type="text" id="porprod2" required="required"/>
+          <label for="input" class="control-label">Produto 2</label><i class="bar"></i>
+      </div>
+      <div class="form-group prod3">
+          <input type="text" id="porprod3" required="required"/>
+          <label for="input" class="control-label" >Produto 3</label><i class="bar"></i>
+      </div>
+  </div>
+  <div id="div7" style="display:none"> 
+      <h1>Width produtos:</h1>
+      <div class="form-group prod1">
+          <input type="text" id="wprod1" required="required"/>
+          <label for="input" class="control-label" >Produto 1</label><i class="bar"></i>
+      </div>
+      <div class="form-group prod2">
+          <input type="text" id="wprod2" required="required"/>
+          <label for="input" class="control-label" >Produto 2</label><i class="bar"></i>
+      </div>
+      <div class="form-group prod3">
+          <input type="text" id="wprod3" required="required"/>
+          <label for="input" class="control-label" >Produto 3</label><i class="bar"></i>
+      </div>
+  </div>
+  <div id="div8" style="display:none"> 
+      <h1>Link das Bordas:</h1>
+      <div class="form-group prod1">
+          <input type="text" id="borda1" required="required"/>
+          <label for="input" class="control-label">Borda 1</label><i class="bar"></i>
+      </div>
+      <div class="form-group prod1">
+          <input type="text" id="borda2" required="required"/>
+          <label for="input" class="control-label">Borda 2</label><i class="bar"></i>
+      </div>
+      <div class="form-group prod2">
+          <input type="text" id="borda3" required="required"/>
+          <label for="input" class="control-label">Borda 3</label><i class="bar"></i>
+      </div>
+      <div class="form-group prod3">
+          <input type="text" id="borda4" required="required"/>
+          <label for="input" class="control-label">Borda 4</label><i class="bar"></i>
+      </div>
+  </div>
+  <div id="div9" style="display:none"> 
+      <h1>Width das Bordas:</h1>
+      <div class="form-group prod1">
+          <input type="text" id="wborda1" required="required"/>
+          <label for="input" class="control-label">Borda 1</label><i class="bar"></i>
+      </div>
+      <div class="form-group prod1">
+          <input type="text" id="wborda2" required="required"/>
+          <label for="input" class="control-label">Borda 2</label><i class="bar"></i>
+      </div>
+      <div class="form-group prod2">
+          <input type="text" id="wborda3" required="required"/>
+          <label for="input" class="control-label">Borda 3</label><i class="bar"></i>
+      </div>
+      <div class="form-group prod3">
+          <input type="text" id="wborda4" required="required"/>
+          <label for="input" class="control-label">Borda 4</label><i class="bar"></i>
+      </div>
+  </div>
+  <div id="div10" style="display:none"> 
+      <h1>Width das Bordas:</h1>
+      <div class="form-group prod1">
+          <input type="text" id="height" required="required"/>
+          <label for="input" class="control-label">Height</label><i class="bar"></i>
+      </div>
+  </div>
+    <!-- 
+    <div class="form-group">
+      <textarea required="required"></textarea>
+      <label for="textarea" class="control-label">Textarea</label><i class="bar"></i>
     </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" checked="checked"/><i class="helper"></i>I'm the label from a checkbox
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"/><i class="helper"></i>I'm the label from a checkbox
+      </label>
+    </div>
+    <div class="form-radio">
+      <div class="radio">
+        <label>
+          <input type="radio" name="radio" checked="checked"/><i class="helper"></i>I'm the label from a radio button
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="radio"/><i class="helper"></i>I'm the label from a radio button
+        </label>
+      </div>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"/><i class="helper"></i>I'm the label from a checkbox
+      </label>
+    </div> -->
+  </form>
+</section>
+  <div class="button-container" style="display:flex;">
+      <button type="button" style="margin-bottom: 0;" class="button" onclick="back()" id="back"><span>Anterior</span></button>
+    <button type="button" style="margin-bottom: 0;" class="button" onclick="next()" id="prox"><span>Próximo</span></button>
+  </div>
+  <div class="button-container" >
+      
+      <button type="button" style="margin-top: 10px;" class="button" onclick="fazerVitrine()" id="prox"><span>Preview</span></button>
+    </div>
+</div>
+<div class="container cont2">
+  <h1>Preview:</h1>
+  <div id="testehtml">
+  </div>
+  <div class="button-container" id="copyarea" style="display: none;">
+      
+    <button type="button" style="margin-top: 10px;" class="button" onclick="copiar()" id="copy" ><span>Copiar</span></button>
   </div>
 </div>
-  <script>
-    var j = 1;
-    var back1 ="";
-    var prox ="";
-    function next(){
-        back1.disabled ="false";
-        //   var div2 = document.getElementById("checklist");
-        //   div2.innerText =document.getElementById("bg").getAttribute("name")+": "+document.getElementById("bg").value;
-        if (j<10){
-            var teste = "div" +j;
-            console.log(teste);
-            var div = document.getElementById("div"+j);
-            div.style.display = "none";
-            j++;
-        div = document.getElementById("div"+j);
-        div.style.display = "block";
-      }     
-      else{
-        // j++;
-        // div = document.getElementById("div"+j);
-        // div.style.display = "block";
-        // prox = document.getElementById("prox");
-        prox.disabled = "true";
-      }           
+</div>
+<div class="button-container" >
       
+  <button type="button" style="margin-top: 10px;" class="button" onclick="salvarArquivo()" id="prox"><span>Salvar como arquivo:</span></button>
+</div>
+  <div class="button-container">
+    <label for="txtfiletoread" class="button"><span>Selecionar Arquivo:</span></label>    
+    <input type="file"  id="txtfiletoread" name="image_uploads" style="display:none">
+  </div>  
+<script>
+  var j = 1;
+  var back1 ="";
+  var prox ="";
+  function next(){
+      back1.disabled ="false";
+      //   var div2 = document.getElementById("checklist");
+      //   div2.innerText =document.getElementById("bg").getAttribute("name")+": "+document.getElementById("bg").value;
+      if (j<10){
+          var teste = "div" +j;
+          console.log(teste);
+          var div = document.getElementById("div"+j);
+          div.style.display = "none";
+          j++;
+      div = document.getElementById("div"+j);
+      div.style.display = "block";
+    }     
+    else{
+      // j++;
+      // div = document.getElementById("div"+j);
+      // div.style.display = "block";
+      // prox = document.getElementById("prox");
+      prox.disabled = "true";
+    }           
+    
+  }
+  function back(){
+      prox.disabled ="false";
+    
+  //   var div2 = document.getElementById("checklist");
+  //   div2.innerText =document.getElementById("bg").getAttribute("name")+": "+document.getElementById("bg").value;
+    if (j>1){
+      var teste = "div" +j;
+    console.log(teste);
+    var div = document.getElementById("div"+j);
+    div.style.display = "none";
+      j--;
+      div = document.getElementById("div"+j);
+      div.style.display = "block";
+    }     
+    else{
+      // j--;
+      // div = document.getElementById("div"+j);
+      // div.style.display = "block";
+      // back1 = document.getElementById("back");
+      back1.disabled = "true";
+    }           
+    
+  }
+  getSelectValue();
+  var selectedValue = ""
+  function getSelectValue(){
+    selectedValue = document.getElementById("prod").value;
+    switch(selectedValue){
+      case 'umprod':
+        var x = document.getElementsByClassName("prod2");
+        var y = document.getElementsByClassName("prod3");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+          y[i].style.display = "none";
+        }
+        break;
+      case 'doisprod':
+        var x = document.getElementsByClassName("prod2");
+        var y = document.getElementsByClassName("prod3");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "block";
+          y[i].style.display = "none";
+        }
+        break;
+      case 'tresprod': 
+        var x = document.getElementsByClassName("prod2");
+        var y = document.getElementsByClassName("prod3");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "block";
+          y[i].style.display = "block";
+        }           
     }
-    function back(){
-        prox.disabled ="false";
-      
-    //   var div2 = document.getElementById("checklist");
-    //   div2.innerText =document.getElementById("bg").getAttribute("name")+": "+document.getElementById("bg").value;
-      if (j>1){
-        var teste = "div" +j;
-      console.log(teste);
-      var div = document.getElementById("div"+j);
-      div.style.display = "none";
-        j--;
-        div = document.getElementById("div"+j);
-        div.style.display = "block";
-      }     
-      else{
-        // j--;
-        // div = document.getElementById("div"+j);
-        // div.style.display = "block";
-        // back1 = document.getElementById("back");
-        back1.disabled = "true";
-      }           
-      
-    }
-    getSelectValue();
-    var selectedValue = ""
-    function getSelectValue(){
-      selectedValue = document.getElementById("prod").value;
-      switch(selectedValue){
-        case 'umprod':
-          var x = document.getElementsByClassName("prod2");
-          var y = document.getElementsByClassName("prod3");
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-            y[i].style.display = "none";
-          }
-          break;
-        case 'doisprod':
-          var x = document.getElementsByClassName("prod2");
-          var y = document.getElementsByClassName("prod3");
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "block";
-            y[i].style.display = "none";
-          }
-          break;
-        case 'tresprod': 
-          var x = document.getElementsByClassName("prod2");
-          var y = document.getElementsByClassName("prod3");
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "block";
-            y[i].style.display = "block";
-          }           
-      }
-      
-    }
-    function copyToClipBoard() {
+    
+  }
+  function copyToClipBoard() {
 
-      var content = document.getElementById('textArea');
+    var content = document.getElementById('textArea');
 
-      content.select();
-      document.execCommand('copy');
+    content.select();
+    document.execCommand('copy');
 
-      alert("Copied!");
-    } 
-    function fazerVitrine(){
-        var div = document.getElementById("testehtml");
-        // var div2 = document.getElementById("textArea");
-        // div2.innerText = "";
-        var vitrine = "";
-        vitrine += '<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" align="center" style="width: 600px; max-width: 600px; margin: auto; background-color: '+document.getElementById("bg").value+';height: 100%" width="600">';
-        vitrine += '\n'+'<tr>';
-        vitrine += '\n'+'<td align="left" valign="top">';
-        vitrine += '\n'+'<img src="'+document.getElementById("borda1").value+'" alt="IMAGEM" width="'+document.getElementById("wborda1").value+'" height="'+document.getElementById("height").value+'" style="display: block; padding: 0px; text-align: center; height:100%; width: '+document.getElementById("wborda1").value+'px; border: 0px;">';
-        vitrine += '\n'+'</td>';
-        vitrine += '\n'+'<td align="center" style="line-height:1" valign="MIDDLE" width="'+document.getElementById("wprod1").value+'">';
-        vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod1").value+'" align="center" style="margin: 0; padding: 0;">';
-        vitrine += '\n'+'<tr>';
-        vitrine += '\n'+'<td>';
-        vitrine += '\n'+'<div width="'+document.getElementById("wprod1").value+'" style="text-align:center;">';
-        vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizetxt").value+'px;color:'+document.getElementById("txtcolor").value+';font-family: '+"'Montserrat'"+',sans-serif;font-weight:700;">'+document.getElementById("nomeprod1").value+'</span>';
-        vitrine += '\n'+'</div>';
-        vitrine += '\n'+'<div style="height: 8px">';
-        vitrine += '\n'+'</div>';
-        if(document.getElementById("deprod1").value != ""){
-          vitrine += '\n'+'<div width="'+document.getElementById("wprod1").value+'" style="text-align:center">';
-          vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizede").value+'px;color:'+document.getElementById("colorpd").value+';line-height:1;font-family: '+"'Montserrat'"+',sans-serif;font-weight:300;text-decoration: line-through;text-decoration-color: black;">';
-          vitrine += '\n'+'De R$'+document.getElementById("deprod1").value;
-          vitrine += '\n'+'</span>';
-          vitrine += '\n'+'</div>';            
+    alert("Copied!");
+  } 
+  var vitrine = "";
+  function fazerVitrine(){
+      vitrine = "";
+      var div = document.getElementById("testehtml");
+      // var div2 = document.getElementById("textArea");
+      // div2.innerText = "";
+      vitrine += '<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" align="center" style="width: 600px; max-width: 600px; margin: auto; background-color: '+document.getElementById("bg").value+';height: 100%" width="600">';
+      vitrine += '\n'+'<tr>';
+      vitrine += '\n'+'<td align="left" valign="top">';
+      vitrine += '\n'+'<img src="'+document.getElementById("borda1").value+'" alt="IMAGEM" width="'+document.getElementById("wborda1").value+'" height="'+document.getElementById("height").value+'" style="display: block; padding: 0px; text-align: center; height:100%; width: '+document.getElementById("wborda1").value+'px; border: 0px;">';
+      vitrine += '\n'+'</td>';
+      vitrine += '\n'+'<td align="center" style="line-height:1" valign="MIDDLE" width="'+document.getElementById("wprod1").value+'">';
+      vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod1").value+'" align="center" style="margin: 0; padding: 0;">';
+      vitrine += '\n'+'<tr>';
+      vitrine += '\n'+'<td>';
+      vitrine += '\n'+'<div width="'+document.getElementById("wprod1").value+'" style="text-align:center;">';
+      vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizetxt").value+'px;color:'+document.getElementById("txtcolor").value+';font-family: '+"'Montserrat'"+',sans-serif;font-weight:700;">'+document.getElementById("nomeprod1").value+'</span>';
+      vitrine += '\n'+'</div>';
+      vitrine += '\n'+'<div style="height: 8px">';
+      vitrine += '\n'+'</div>';
+      if(document.getElementById("deprod1").value != ""){
+        vitrine += '\n'+'<div width="'+document.getElementById("wprod1").value+'" style="text-align:center">';
+        vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizede").value+'px;color:'+document.getElementById("colorpd").value+';line-height:1;font-family: '+"'Montserrat'"+',sans-serif;font-weight:300;text-decoration: line-through;text-decoration-color: black;">';
+        vitrine += '\n'+'De R$'+document.getElementById("deprod1").value;
+        vitrine += '\n'+'</span>';
+        vitrine += '\n'+'</div>';            
+        }
+      vitrine += '\n'+'</td>';
+      vitrine += '\n'+'</tr>';
+      vitrine += '\n'+'<tr>';
+      vitrine += '\n'+'<td align="center" valign="top" width="'+document.getElementById("wprod1").value+'" style="padding: 0;">';
+      vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod1").value+'" align="center" style="margin: 0; padding: 0;">';
+      vitrine += '\n'+'<tr>';
+      vitrine += '\n'+'<td width="'+document.getElementById("wprod1").value/2.5+'">';
+      vitrine += '\n'+'</td>';
+      vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
+      vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value/2.4+'px;text-align: left;color:'+document.getElementById("colorpp").value+'; margin:0 0 0 0;font-weight: 700;padding:0;">POR<br>R$';
+      vitrine += '\n'+'</p>';
+      vitrine += '\n'+'</td>';
+      vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
+      vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value+'px;text-align: left; color: '+document.getElementById("colorpp").value+'; margin:0;padding:0;font-weight: 700;">&nbsp;';
+      vitrine += document.getElementById("porprod1").value;;
+      vitrine += '\n'+'</p>';
+      vitrine += '\n'+'</td> ';
+      vitrine += '\n'+'<td width="'+document.getElementById("wprod1").value/2.5+'">';
+      vitrine += '\n'+'</td>';
+      vitrine += '\n'+'</tr>';
+      vitrine += '\n'+'</table>';
+      vitrine += '\n'+'</td>';
+      vitrine += '\n'+'</tr>';
+      vitrine += '\n'+'</table>';
+      vitrine += '\n'+'</td>';
+      vitrine += '\n'+'<td align="left" valign="top">';
+      vitrine += '\n'+'<img src="'+document.getElementById("borda2").value+'" alt="TEXTO DA IMAGEM" width="'+document.getElementById("wborda2").value+'" height="'+document.getElementById("height").value+'" style="display: block; padding: 0px; text-align: center; height: 100%; width: '+document.getElementById("wborda2").value+'px; border: 0px;">';
+      vitrine += '\n'+'</td>';
+        if(selectedValue == 'doisprod'||selectedValue =='tresprod'){
+          vitrine += '\n'+'<td align="center" style="line-height:1" valign="MIDDLE" width="'+document.getElementById("wprod2").value+'">';
+          vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod2").value+'" align="center" style="margin: 0; padding: 0;">';
+          vitrine += '\n'+'<tr>';
+          vitrine += '\n'+'<td>';
+          vitrine += '\n'+'<div width="'+document.getElementById("wprod2").value+'" style="text-align:center;">';
+          vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizetxt").value+'px;color:'+document.getElementById("txtcolor").value+';font-family: '+"'Montserrat'"+',sans-serif;font-weight:700;">'+document.getElementById("nomeprod2").value+'</span>';
+          vitrine += '\n'+'</div>';
+          vitrine += '\n'+'<div style="height: 8px">';
+          vitrine += '\n'+'</div>';
+          if(document.getElementById("deprod2").value != ""){
+            vitrine += '\n'+'<div width="'+document.getElementById("wprod2").value+'" style="text-align:center">';
+            vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizede").value+'px;color:'+document.getElementById("colorpd").value+';line-height:1;font-family: '+"'Montserrat'"+',sans-serif;font-weight:300;text-decoration: line-through;text-decoration-color: black;">';
+            vitrine += '\n'+'De R$'+document.getElementById("deprod2").value;
+            vitrine += '\n'+'</span>';
+            vitrine += '\n'+'</div>';              
           }
-        vitrine += '\n'+'</td>';
-        vitrine += '\n'+'</tr>';
-        vitrine += '\n'+'<tr>';
-        vitrine += '\n'+'<td align="center" valign="top" width="'+document.getElementById("wprod1").value+'" style="padding: 0;">';
-        vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod1").value+'" align="center" style="margin: 0; padding: 0;">';
-        vitrine += '\n'+'<tr>';
-        vitrine += '\n'+'<td width="'+document.getElementById("wprod1").value/2.5+'">';
-        vitrine += '\n'+'</td>';
-        vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
-        vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value/2.4+'px;text-align: left;color:'+document.getElementById("colorpp").value+'; margin:0 0 0 0;font-weight: 700;padding:0;">POR<br>R$';
-        vitrine += '\n'+'</p>';
-        vitrine += '\n'+'</td>';
-        vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
-        vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value+'px;text-align: left; color: '+document.getElementById("colorpp").value+'; margin:0;padding:0;font-weight: 700;">&nbsp;';
-        vitrine += document.getElementById("porprod1").value;;
-        vitrine += '\n'+'</p>';
-        vitrine += '\n'+'</td> ';
-        vitrine += '\n'+'<td width="'+document.getElementById("wprod1").value/2.5+'">';
-        vitrine += '\n'+'</td>';
-        vitrine += '\n'+'</tr>';
-        vitrine += '\n'+'</table>';
-        vitrine += '\n'+'</td>';
-        vitrine += '\n'+'</tr>';
-        vitrine += '\n'+'</table>';
-        vitrine += '\n'+'</td>';
-        vitrine += '\n'+'<td align="left" valign="top">';
-        vitrine += '\n'+'<img src="'+document.getElementById("borda2").value+'" alt="TEXTO DA IMAGEM" width="'+document.getElementById("wborda2").value+'" height="'+document.getElementById("height").value+'" style="display: block; padding: 0px; text-align: center; height: 100%; width: '+document.getElementById("wborda2").value+'px; border: 0px;">';
-        vitrine += '\n'+'</td>';
-          if(selectedValue == 'doisprod'||selectedValue =='tresprod'){
-            vitrine += '\n'+'<td align="center" style="line-height:1" valign="MIDDLE" width="'+document.getElementById("wprod2").value+'">';
-            vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod2").value+'" align="center" style="margin: 0; padding: 0;">';
+          vitrine += '\n'+'</td>';
+          vitrine += '\n'+'</tr>';
+          vitrine += '\n'+'<tr>';
+          vitrine += '\n'+'<td align="center" valign="top" width="'+document.getElementById("wprod2").value+'" style="padding: 0;">';
+          vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod2").value+'" align="center" style="margin: 0; padding: 0;">';
+          vitrine += '\n'+'<tr>';
+          vitrine += '\n'+'<td width="'+document.getElementById("wprod2").value/2.5+'">';
+          vitrine += '\n'+'</td>';
+          vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
+          vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value/2.4+'px;text-align: left;color:'+document.getElementById("colorpp").value+'; margin:0 0 0 0;font-weight: 700;padding:0;">POR<br>R$';
+          vitrine += '\n'+'</p>';
+          vitrine += '\n'+'</td>';
+          vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
+          vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value+'px;text-align: left; color: '+document.getElementById("colorpp").value+'; margin:0;padding:0;font-weight: 700;">&nbsp;';
+          vitrine += document.getElementById("porprod2").value;;
+          vitrine += '\n'+'</p>';
+          vitrine += '\n'+'</td> ';
+          vitrine += '\n'+'<td width="'+document.getElementById("wprod2").value/2.5+'">';
+          vitrine += '\n'+'</td>';
+          vitrine += '\n'+'</tr>';
+          vitrine += '\n'+'</table>';
+          vitrine += '\n'+'</td>';
+          vitrine += '\n'+'</tr>';
+          vitrine += '\n'+'</table>';
+          vitrine += '\n'+'</td>';
+            vitrine += '\n'+'<td align="left" valign="top">';
+            vitrine += '\n'+'<img src="'+document.getElementById("borda3").value+'" alt="TEXTO DA IMAGEM" width="'+document.getElementById("wborda3").value+'" height="'+document.getElementById("height").value+'" style="display: block; padding: 0px; text-align: center; height: 100%; width: '+document.getElementById("wborda3").value+'px; border: 0px;">';
+            vitrine += '\n'+'</td>';
+          if(selectedValue == 'tresprod'){
+            
+            vitrine += '\n'+'<td align="center" style="line-height:1" valign="MIDDLE" width="'+document.getElementById("wprod3").value+'">';
+            vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod3").value+'" align="center" style="margin: 0; padding: 0;">';
             vitrine += '\n'+'<tr>';
             vitrine += '\n'+'<td>';
-            vitrine += '\n'+'<div width="'+document.getElementById("wprod2").value+'" style="text-align:center;">';
-            vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizetxt").value+'px;color:'+document.getElementById("txtcolor").value+';font-family: '+"'Montserrat'"+',sans-serif;font-weight:700;">'+document.getElementById("nomeprod2").value+'</span>';
+            vitrine += '\n'+'<div width="'+document.getElementById("wprod3").value+'" style="text-align:center;">';
+            vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizetxt").value+'px;color:'+document.getElementById("txtcolor").value+';font-family: '+"'Montserrat'"+',sans-serif;font-weight:700;">'+document.getElementById("nomeprod3").value+'</span>';
             vitrine += '\n'+'</div>';
             vitrine += '\n'+'<div style="height: 8px">';
             vitrine += '\n'+'</div>';
-            if(document.getElementById("deprod2").value != ""){
-              vitrine += '\n'+'<div width="'+document.getElementById("wprod2").value+'" style="text-align:center">';
+            if(document.getElementById("deprod3").value != ""){
+              vitrine += '\n'+'<div width="'+document.getElementById("wprod3").value+'" style="text-align:center">';
               vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizede").value+'px;color:'+document.getElementById("colorpd").value+';line-height:1;font-family: '+"'Montserrat'"+',sans-serif;font-weight:300;text-decoration: line-through;text-decoration-color: black;">';
-              vitrine += '\n'+'De R$'+document.getElementById("deprod2").value;
+              vitrine += '\n'+'De R$'+document.getElementById("deprod3").value;
               vitrine += '\n'+'</span>';
               vitrine += '\n'+'</div>';              
             }
             vitrine += '\n'+'</td>';
             vitrine += '\n'+'</tr>';
             vitrine += '\n'+'<tr>';
-            vitrine += '\n'+'<td align="center" valign="top" width="'+document.getElementById("wprod2").value+'" style="padding: 0;">';
-            vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod2").value+'" align="center" style="margin: 0; padding: 0;">';
+            vitrine += '\n'+'<td align="center" valign="top" width="160" style="padding: 0;">';
+            vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod3").value+'" align="center" style="margin: 0; padding: 0;">';
             vitrine += '\n'+'<tr>';
-            vitrine += '\n'+'<td width="'+document.getElementById("wprod2").value/2.5+'">';
+            vitrine += '\n'+'<td width="'+document.getElementById("wprod3").value/2.5+'">';
             vitrine += '\n'+'</td>';
             vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
-            vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value/2.4+'px;text-align: left;color:'+document.getElementById("colorpp").value+'; margin:0 0 0 0;font-weight: 700;padding:0;">POR<br>R$';
+            vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value/2.4+'px;text-align: left;color: '+document.getElementById("colorpp").value+'; margin:0 0 0 0;font-weight: 700;padding:0;">POR<br>R$';
             vitrine += '\n'+'</p>';
             vitrine += '\n'+'</td>';
             vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
             vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value+'px;text-align: left; color: '+document.getElementById("colorpp").value+'; margin:0;padding:0;font-weight: 700;">&nbsp;';
-            vitrine += document.getElementById("porprod2").value;;
+            vitrine += document.getElementById("porprod3").value;;
             vitrine += '\n'+'</p>';
             vitrine += '\n'+'</td> ';
-            vitrine += '\n'+'<td width="'+document.getElementById("wprod2").value/2.5+'">';
+            vitrine += '\n'+'<td width="'+document.getElementById("wprod3").value/2.5+'">';
             vitrine += '\n'+'</td>';
             vitrine += '\n'+'</tr>';
             vitrine += '\n'+'</table>';
@@ -397,63 +456,116 @@
             vitrine += '\n'+'</tr>';
             vitrine += '\n'+'</table>';
             vitrine += '\n'+'</td>';
-              vitrine += '\n'+'<td align="left" valign="top">';
-              vitrine += '\n'+'<img src="'+document.getElementById("borda3").value+'" alt="TEXTO DA IMAGEM" width="'+document.getElementById("wborda3").value+'" height="'+document.getElementById("height").value+'" style="display: block; padding: 0px; text-align: center; height: 100%; width: '+document.getElementById("wborda3").value+'px; border: 0px;">';
-              vitrine += '\n'+'</td>';
-            if(selectedValue == 'tresprod'){
-              
-              vitrine += '\n'+'<td align="center" style="line-height:1" valign="MIDDLE" width="'+document.getElementById("wprod3").value+'">';
-              vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod3").value+'" align="center" style="margin: 0; padding: 0;">';
-              vitrine += '\n'+'<tr>';
-              vitrine += '\n'+'<td>';
-              vitrine += '\n'+'<div width="'+document.getElementById("wprod3").value+'" style="text-align:center;">';
-              vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizetxt").value+'px;color:'+document.getElementById("txtcolor").value+';font-family: '+"'Montserrat'"+',sans-serif;font-weight:700;">'+document.getElementById("nomeprod3").value+'</span>';
-              vitrine += '\n'+'</div>';
-              vitrine += '\n'+'<div style="height: 8px">';
-              vitrine += '\n'+'</div>';
-              if(document.getElementById("deprod3").value != ""){
-                vitrine += '\n'+'<div width="'+document.getElementById("wprod3").value+'" style="text-align:center">';
-                vitrine += '\n'+'<span style="font-size:'+document.getElementById("sizede").value+'px;color:'+document.getElementById("colorpd").value+';line-height:1;font-family: '+"'Montserrat'"+',sans-serif;font-weight:300;text-decoration: line-through;text-decoration-color: black;">';
-                vitrine += '\n'+'De R$'+document.getElementById("deprod3").value;
-                vitrine += '\n'+'</span>';
-                vitrine += '\n'+'</div>';              
-              }
-              vitrine += '\n'+'</td>';
-              vitrine += '\n'+'</tr>';
-              vitrine += '\n'+'<tr>';
-              vitrine += '\n'+'<td align="center" valign="top" width="160" style="padding: 0;">';
-              vitrine += '\n'+'<table bgcolor="'+document.getElementById("bg").value+'" cellpadding="0" cellspacing="0" border="0" width="'+document.getElementById("wprod3").value+'" align="center" style="margin: 0; padding: 0;">';
-              vitrine += '\n'+'<tr>';
-              vitrine += '\n'+'<td width="'+document.getElementById("wprod3").value/2.5+'">';
-              vitrine += '\n'+'</td>';
-              vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
-              vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value/2.4+'px;text-align: left;color: '+document.getElementById("colorpp").value+'; margin:0 0 0 0;font-weight: 700;padding:0;">POR<br>R$';
-              vitrine += '\n'+'</p>';
-              vitrine += '\n'+'</td>';
-              vitrine += '\n'+'<td align="center" valign="middle" style="line-height:1">';
-              vitrine += '\n'+'<p style="font-family:'+"'Montserrat'"+', sans-serif;font-size: '+document.getElementById("sizepor").value+'px;text-align: left; color: '+document.getElementById("colorpp").value+'; margin:0;padding:0;font-weight: 700;">&nbsp;';
-              vitrine += document.getElementById("porprod3").value;;
-              vitrine += '\n'+'</p>';
-              vitrine += '\n'+'</td> ';
-              vitrine += '\n'+'<td width="'+document.getElementById("wprod3").value/2.5+'">';
-              vitrine += '\n'+'</td>';
-              vitrine += '\n'+'</tr>';
-              vitrine += '\n'+'</table>';
-              vitrine += '\n'+'</td>';
-              vitrine += '\n'+'</tr>';
-              vitrine += '\n'+'</table>';
-              vitrine += '\n'+'</td>';
-              vitrine += '\n'+'<td align="right" valign="top">';
-              vitrine += '\n'+'<img src="'+document.getElementById("borda4").value+'" alt="TEXTO DA IMAGEM" width="'+document.getElementById("wborda4").value+'" height="'+document.getElementById("height").value+'" style="display: block; padding: 0px; text-align: center; height: 100%; width: '+document.getElementById("wborda4").value+'px; border: 0px;">';
-              vitrine += '\n'+'</td>';
+            vitrine += '\n'+'<td align="right" valign="top">';
+            vitrine += '\n'+'<img src="'+document.getElementById("borda4").value+'" alt="TEXTO DA IMAGEM" width="'+document.getElementById("wborda4").value+'" height="'+document.getElementById("height").value+'" style="display: block; padding: 0px; text-align: center; height: 100%; width: '+document.getElementById("wborda4").value+'px; border: 0px;">';
+            vitrine += '\n'+'</td>';
+          }
+        }                    
+      vitrine += '\n'+'</tr>';
+      vitrine += '\n'+'</table>';
+      // div2.innerText = (vitrine);
+      div.style.height = document.getElementById("height").value +"px";
+      div.innerHTML = vitrine;
+      // navigator.clipboard.writeText(vitrine);
+      // console.log(selectedValue);
+      document.getElementById("copyarea").style.display = "block";
+    }
+    function copiar(){
+      navigator.clipboard.writeText(vitrine);
+    }
+</script>
+<script>
+  var leitura = ""
+  window.onload = function () {
+            //Check the support for the File API support
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                var fileSelected = document.getElementById('txtfiletoread');
+                fileSelected.addEventListener('change', function (e) {
+                    //Set the extension for the file
+                    var fileExtension = /text.*/;
+                    //Get the file object
+                    var fileTobeRead = fileSelected.files[0];
+                    //Check of the extension match
+                    if (fileTobeRead.type.match(fileExtension)) {
+                        //Initialize the FileReader object to read the 2file
+                        var fileReader = new FileReader();
+                        fileReader.onload = function (e) {
+                            // var fileContents = document.getElementById('filecontents');
+                            // fileContents.innerText = fileReader.result;
+                            leitura = fileReader.result;
+                            validadados(leitura);
+                        }
+                        fileReader.readAsText(fileTobeRead);                        
+                    }
+                    else {
+                      leitura = "";
+                        alert("Por favor selecione arquivo texto");
+                    }
+
+                }, false);
             }
-          }                    
-        vitrine += '\n'+'</tr>';
-        vitrine += '\n'+'</table>';
-        // div2.innerText = (vitrine);
-        div.style.height = document.getElementById("height").value +"px";
-        div.innerHTML = vitrine;
-        navigator.clipboard.writeText(vitrine);
-        console.log(selectedValue);
+            else {
+                alert("Arquivo(s) não suportado(s)");
+            }
+        }
+  function validadados(dadolido){
+    var idleitura = [];
+    var dadoleitura = [];
+    if (dadolido != ""){
+      var vetordado = dadolido.split("|");
+      var cont1 = 0;
+      var cont2 = 0;
+      for (var i = 0; i<vetordado.length;i++){
+        if (i%2 == 0 || i ==0){
+          idleitura[cont1] = vetordado[i];          
+          cont1++;
+        }
+        else{
+          dadoleitura[cont2] = vetordado[i];          
+          cont2++;
+        }
       }
-  </script>
+      preenchedados(idleitura,dadoleitura);
+    }
+  }
+  function preenchedados(id, dado){
+    for(var i = 0;i<id.length;i++){      
+      var idselect = document.getElementById(id[i]);
+      idselect.value = dado[i];
+    }
+    getSelectValue();
+    fazerVitrine();
+  }
+  function salvarArquivo(){
+    var ids = ["prod","bg","txtcolor","colorpd","colorpp","sizetxt","sizede","sizepor","nomeprod1","nomeprod2","nomeprod3","deprod1","deprod2","deprod3","porprod1","porprod2","porprod3","wprod1","wprod2","wprod3","borda1","borda2","borda3","borda4","wborda1","wborda2","wborda3","wborda4","height"];    
+    var dados = [];
+    var j = 0;
+    for(var i = 0;i< ids.length;i++){
+      dados[j] = ids[i];
+      j++;      
+      dados[j] = document.getElementById(ids[i]).value;
+      j++;
+    }
+    var txt = dados.join("|");    
+    var data = new Date();
+    var dia = String(data.getDate()).padStart(2, '0');
+    var mes = String(data.getMonth() + 1).padStart(2, '0');
+    var ano = data.getFullYear();
+    var nomearquivo = "Vitrine - " + dia + '-' + mes + '-' + ano+".txt";
+    download(nomearquivo,txt);
+  }
+  function download(filename, text) {
+    var pom = document.createElement('a');
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    pom.setAttribute('download', filename);
+
+    if (document.createEvent) {
+        var event = document.createEvent('MouseEvents');
+        event.initEvent('click', true, true);
+        pom.dispatchEvent(event);
+    }
+    else {
+        pom.click();
+    }
+}
+</script>
