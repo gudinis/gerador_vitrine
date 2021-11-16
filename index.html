@@ -27,12 +27,12 @@
       <div id='main-slider' class="splide">
         <div class="splide__track">
           <ul class="splide__list">
-            <li class="splide__slide"><img src="./imagens-home/img1.png"></li>
-            <li class="splide__slide"><img src="./imagens-home/img2.png"></li>
-            <li class="splide__slide"><img src="./imagens-home/img1.png"></li>
-            <li class="splide__slide"><img src="./imagens-home/img2.png"></li>
-            <li class="splide__slide"><img src="./imagens-home/img1.png"></li>
-            <li class="splide__slide"><img src="./imagens-home/img2.png"></li>
+            <li class="splide__slide" data-splide-hash="vitrine01"><img src="./imagens-home/img1.png"></li>
+            <li class="splide__slide" data-splide-hash="vitrine02"><img src="./imagens-home/img2.png"></li>
+            <li class="splide__slide" data-splide-hash="vitrine03"><img src="./imagens-home/img1.png"></li>
+            <li class="splide__slide" data-splide-hash="vitrine04"><img src="./imagens-home/img2.png"></li>
+            <li class="splide__slide" data-splide-hash="vitrine05"><img src="./imagens-home/img1.png"></li>
+            <li class="splide__slide" data-splide-hash="vitrine06"><img src="./imagens-home/img2.png"></li>
           </ul>
         </div>
       </div>
@@ -129,6 +129,7 @@
      </div> -->
     
     <script src="./splide-3.3.0/dist/js/splide.min.js"></script>
+    <script src="./splide-3.3.0/dist/js/splide-extension-url-hash.min.js"></script>
     <script>      
 //  document.addEventListener( 'DOMContentLoaded', function () {
 //   var main = new Splide( '#main-slider', {
@@ -163,6 +164,7 @@ var main = new Splide( '#main-slider', {
   focus    : 'center',
   fixedWidth  : 650,
   fixedHeight : 402,
+  waitForTransition: true,
   type     : 'loop',
   gap:30,
   // type      : 'fade',
@@ -193,7 +195,7 @@ var thumbnails = new Splide( '#thumbnail-slider', {
   },
 } );
 main.sync( thumbnails );
-main.mount();
+main.mount(window.splide.Extensions);
 thumbnails.mount();
     </script>
 </body>
