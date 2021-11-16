@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./style.css" />
-    <!-- <link rel="stylesheet" href="./style2.css" /> -->
+    <link rel="stylesheet" href="./style2.css" />
     <link rel="stylesheet" href="./splide-3.3.0/dist/css/themes/splide-sea-green.min.css">
     <title>Gerador de Vitrine</title>
   </head>
@@ -78,7 +78,10 @@
           </ul>
         </div>
       </div>
-    
+      <div class="button-container" id="copyarea">
+      
+        <button type="button" style="margin-top: 10px;" class="button" onclick="vitrine()" id="vitrine" ><span>Ir para Vitrine</span></button>
+      </div>
       <!-- <div id="thumbnail-navigation-slider" class="example-module--example-slider--2SHhX example-module--example-slider-active--ZTXeq">
         <div id="thumbnail-navigation-wrapper" class="splide-wrapper site">
            <div id="thumbnail-navigation" class="splide splide--fade splide--ltr splide--draggable is-active is-rendered is-initialized">
@@ -197,6 +200,11 @@ var thumbnails = new Splide( '#thumbnail-slider', {
 main.sync( thumbnails );
 main.mount(window.splide.Extensions);
 thumbnails.mount();
+function vitrine(){
+  var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character7
+  // window.location.href = "https://gudinis.github.io/gerador_vitrine/" + hash;
+  window.location.href = ".git /vitrine";      
+}
     </script>
 </body>
 </html>
